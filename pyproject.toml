@@ -5,6 +5,7 @@ dependencies = [
   "typing_extensions", # Better typing
   "tomli", 
   "pre-commit", 
+  "ConfigSpace",
   
   
   
