@@ -29,7 +29,7 @@ class AbstractFunction(Problem):
 
     def evaluate(self, trial_info: TrialInfo) -> TrialValue:
         config = trial_info.config
-        x = np.array(config.values())
+        x = np.array(list(config.values()))
         cost = self._function(x=x)
         return TrialValue(cost=cost)
 
