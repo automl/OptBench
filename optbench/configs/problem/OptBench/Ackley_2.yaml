@@ -4,7 +4,7 @@ problem_id: Ackley-2
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:
-    _target_: <class 'optbench.functions.Ackley'>
+    _target_: optbench.functions.Ackley
     dim: 2
     seed: ${seed}
 task:

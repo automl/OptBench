@@ -4,7 +4,7 @@ problem_id: Levy-10
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:
-    _target_: <class 'optbench.functions.Levy'>
+    _target_: optbench.functions.Levy
     dim: 10
     seed: ${seed}
 task:

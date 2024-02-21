@@ -4,7 +4,7 @@ problem_id: Schwefel-10
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:
-    _target_: <class 'optbench.functions.Schwefel'>
+    _target_: optbench.functions.Schwefel
     dim: 10
     seed: ${seed}
 task:
