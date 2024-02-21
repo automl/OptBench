@@ -18,6 +18,3 @@ def test_opt(funcclass):
     func = funcclass(dim=4)
     y = func._function(func.x_min)
     assert func.f_min == y
-
-
-
