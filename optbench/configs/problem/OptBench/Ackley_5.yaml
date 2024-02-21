@@ -1,0 +1,12 @@
+# @package _global_
+benchmark_id: OptBench
+problem_id: Ackley-5
+problem:
+  _target_: optbench.optbench_problem.OptBenchProblem
+  function:
+    _target_: <class 'optbench.functions.Ackley'>
+    dim: 5
+    seed: ${seed}
+task:
+  n_trials: 125
+  n_objectives: 1

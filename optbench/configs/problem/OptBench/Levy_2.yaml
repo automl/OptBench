@@ -1,0 +1,12 @@
+# @package _global_
+benchmark_id: OptBench
+problem_id: Levy-2
+problem:
+  _target_: optbench.optbench_problem.OptBenchProblem
+  function:
+    _target_: <class 'optbench.functions.Levy'>
+    dim: 2
+    seed: ${seed}
+task:
+  n_trials: 50
+  n_objectives: 1
