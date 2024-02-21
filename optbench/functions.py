@@ -69,4 +69,27 @@ class Levy(AbstractFunction):
         Sum = np.sum(((wi - 1)**2) * (1 + 10*np.sin(np.pi * wi + 1) ** 2 ))
         y = term1 + Sum + term3
         return y
+    
+class Schwefel(AbstractFunction):
+    def __init__(self, dim: int) -> None:
+        lower_bounds = np.array([-500] * dim)
+        upper_bounds = -lower_bounds 
+
+        super().__init__(dim, lower_bounds, upper_bounds)
+
+    @property
+    def x_min(self) -> ndarray | None:
+        return np.ones((self.dim,)) * 420.9687
+    
+    @property
+    def f_min(self) -> float | None:
+        return 0
+
+    def _function(self, x: ndarray) -> float:
+        # https://www.sfu.ca/~ssurjano/Code/schwefr.html
+        x = np.asarray(x).reshape(-1)
+        d = len(x)
+        Sum = np.sum(x * np.sin(np.sqrt(np.abs(x))))
+        y = 418.9829 * d - Sum
+        return y
        
