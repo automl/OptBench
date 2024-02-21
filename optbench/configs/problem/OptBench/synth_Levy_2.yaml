@@ -1,10 +1,10 @@
 # @package _global_
 benchmark_id: OptBench
-problem_id: Schwefel-2
+problem_id: synth-Levy-2
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:
-    _target_: optbench.functions.Schwefel
+    _target_: optbench.functions.Levy
     dim: 2
     seed: ${seed}
 task:

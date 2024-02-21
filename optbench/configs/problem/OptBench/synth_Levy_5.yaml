@@ -1,6 +1,6 @@
 # @package _global_
 benchmark_id: OptBench
-problem_id: Levy-5
+problem_id: synth-Levy-5
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:

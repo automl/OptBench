@@ -1,12 +1,12 @@
 # @package _global_
 benchmark_id: OptBench
-problem_id: Ackley-5
+problem_id: synth-Ackley-2
 problem:
   _target_: optbench.optbench_problem.OptBenchProblem
   function:
     _target_: optbench.functions.Ackley
-    dim: 5
+    dim: 2
     seed: ${seed}
 task:
-  n_trials: 125
+  n_trials: 50
   n_objectives: 1
