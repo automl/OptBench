@@ -17,6 +17,7 @@ class OptBenchProblem(Problem):
 
         self.function = function
 
+    @property
     def configspace(self) -> ConfigurationSpace:
         return self.function.configspace
 
