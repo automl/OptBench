@@ -4,15 +4,17 @@ import numpy as np
 from ConfigSpace import ConfigurationSpace, Float
 from numpy import ndarray
 
+from smacbenchmarking.loggers.abstract_logger import AbstractLogger
+
 from optbench.abstract_function import AbstractFunction
 
 
 class Ackley(AbstractFunction):
-    def __init__(self, dim: int, seed: int | None = None, a: float = 20, b: float = 0.2, c: float = 2 * np.pi) -> None:
+    def __init__(self, dim: int, seed: int | None = None, a: float = 20, b: float = 0.2, c: float = 2 * np.pi, loggers: list[AbstractLogger] | None = None) -> None:
         lower_bounds = np.array([-32.768] * dim)
         upper_bounds = -lower_bounds
 
-        super().__init__(dim, lower_bounds, upper_bounds, seed=seed)
+        super().__init__(dim, lower_bounds, upper_bounds, seed=seed, loggers=loggers)
 
         self.a = a
         self.b = b
@@ -40,11 +42,11 @@ class Ackley(AbstractFunction):
 
 
 class Levy(AbstractFunction):
-    def __init__(self, dim: int, seed: int | None = None) -> None:
+    def __init__(self, dim: int, seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:
         lower_bounds = np.array([-10] * dim)
         upper_bounds = -lower_bounds
 
-        super().__init__(dim, lower_bounds, upper_bounds, seed=seed)
+        super().__init__(dim, lower_bounds, upper_bounds, seed=seed, loggers=loggers)
 
         self._configspace = ConfigurationSpace(
             {f"x_{i}": Float(bounds=(self.lower_bounds[i], self.upper_bounds[i]), default=-4, name=f"x_{i}") for i in range(dim)},
@@ -71,11 +73,11 @@ class Levy(AbstractFunction):
         return term1 + Sum + term3
 
 class Schwefel(AbstractFunction):
-    def __init__(self, dim: int, seed: int | None = None) -> None:
+    def __init__(self, dim: int, seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:
         lower_bounds = np.array([-500] * dim)
         upper_bounds = -lower_bounds
 
-        super().__init__(dim, lower_bounds, upper_bounds, seed=seed)
+        super().__init__(dim, lower_bounds, upper_bounds, seed=seed, loggers=loggers)
 
     @property
     def x_min(self) -> ndarray | None:

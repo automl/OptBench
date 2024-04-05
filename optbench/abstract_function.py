@@ -6,10 +6,10 @@ import numpy as np
 from ConfigSpace import ConfigurationSpace
 from smacbenchmarking.benchmarks.problem import Problem
 from smacbenchmarking.utils.trials import TrialInfo, TrialValue
-
+from smacbenchmarking.loggers.abstract_logger import AbstractLogger
 
 class AbstractFunction(Problem):
-    def __init__(self, dim: int, lower_bounds: list[float], upper_bounds: list[float], seed: int | None = None) -> None:
+    def __init__(self, dim: int, lower_bounds: list[float], upper_bounds: list[float], seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:
         super().__init__()
 
         self.dim = dim
@@ -27,7 +27,7 @@ class AbstractFunction(Problem):
     def configspace(self) -> ConfigurationSpace:
         return self._configspace
 
-    def evaluate(self, trial_info: TrialInfo) -> TrialValue:
+    def _evaluate(self, trial_info: TrialInfo) -> TrialValue:
         config = trial_info.config
         x = np.array(list(config.values()))
         cost = self._function(x=x)
