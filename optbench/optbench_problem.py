@@ -9,11 +9,13 @@ if TYPE_CHECKING:
     from smacbenchmarking.utils.trials import TrialInfo, TrialValue
 
     from optbench.abstract_function import AbstractFunction
+    from smacbenchmarking.loggers.abstract_logger import AbstractLogger
+
 
 
 class OptBenchProblem(Problem):
-    def __init__(self, function: AbstractFunction) -> None:
-        super().__init__()
+    def __init__(self, function: AbstractFunction, loggers: list[AbstractLogger] | None = None) -> None:
+        super().__init__(loggers=loggers)
 
         self.function = function
 
