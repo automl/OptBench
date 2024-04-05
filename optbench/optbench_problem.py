@@ -21,7 +21,7 @@ class OptBenchProblem(Problem):
     def configspace(self) -> ConfigurationSpace:
         return self.function.configspace
 
-    def evaluate(self, trial_info: TrialInfo) -> TrialValue:
+    def _evaluate(self, trial_info: TrialInfo) -> TrialValue:
         return self.function.evaluate(trial_info)
 
     def f_min(self) -> float | None:
