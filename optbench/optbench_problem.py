@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from smacbenchmarking.benchmarks.problem import Problem
+from carps.benchmarks.problem import Problem
 
 if TYPE_CHECKING:
     from ConfigSpace import ConfigurationSpace
-    from smacbenchmarking.utils.trials import TrialInfo, TrialValue
+    from carps.utils.trials import TrialInfo, TrialValue
 
     from optbench.abstract_function import AbstractFunction
-    from smacbenchmarking.loggers.abstract_logger import AbstractLogger
+    from carps.loggers.abstract_logger import AbstractLogger
 
 
 

@@ -4,9 +4,9 @@ from abc import abstractmethod
 
 import numpy as np
 from ConfigSpace import ConfigurationSpace
-from smacbenchmarking.benchmarks.problem import Problem
-from smacbenchmarking.utils.trials import TrialInfo, TrialValue
-from smacbenchmarking.loggers.abstract_logger import AbstractLogger
+from carps.benchmarks.problem import Problem
+from carps.utils.trials import TrialInfo, TrialValue
+from carps.loggers.abstract_logger import AbstractLogger
 
 class AbstractFunction(Problem):
     def __init__(self, dim: int, lower_bounds: list[float], upper_bounds: list[float], seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:

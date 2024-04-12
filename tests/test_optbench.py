@@ -21,7 +21,7 @@ def test_opt(funcclass):
 
 from omegaconf import OmegaConf
 from hydra.utils import instantiate
-from smacbenchmarking.utils.trials import TrialInfo, TrialValue
+from carps.utils.trials import TrialInfo, TrialValue
 
 path = "../lib/OptBench/optbench/configs/problem/OptBench/Ackley_5.yaml"
 cfg = OmegaConf.load(path)

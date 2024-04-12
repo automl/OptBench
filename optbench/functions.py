@@ -4,7 +4,7 @@ import numpy as np
 from ConfigSpace import ConfigurationSpace, Float
 from numpy import ndarray
 
-from smacbenchmarking.loggers.abstract_logger import AbstractLogger
+from carps.loggers.abstract_logger import AbstractLogger
 
 from optbench.abstract_function import AbstractFunction
 
