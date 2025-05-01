@@ -2,13 +2,20 @@ from __future__ import annotations
 
 from abc import abstractmethod
 
-import numpy as np
-from ConfigSpace import ConfigurationSpace
-from carps.benchmarks.problem import Problem
-from carps.utils.trials import TrialInfo, TrialValue
-from carps.loggers.abstract_logger import AbstractLogger
+import time
+from typing import TYPE_CHECKING, Any
 
-class AbstractFunction(Problem):
+from ConfigSpace import ConfigurationSpace, Float
+
+import numpy as np
+from carps.objective_functions.objective_function import ObjectiveFunction
+from carps.utils.trials import TrialInfo, TrialValue
+
+
+if TYPE_CHECKING:
+    from carps.loggers.abstract_logger import AbstractLogger
+
+class AbstractFunction(ObjectiveFunction):
     def __init__(self, dim: int, lower_bounds: list[float], upper_bounds: list[float], seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:
         super().__init__()
 

@@ -1,19 +1,21 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+import time
+from typing import TYPE_CHECKING, Any
 
-from carps.benchmarks.problem import Problem
+from ConfigSpace import ConfigurationSpace, Float
+
+from carps.objective_functions.objective_function import ObjectiveFunction
+from carps.utils.trials import TrialInfo, TrialValue
+
+from optbench.abstract_function import AbstractFunction
 
 if TYPE_CHECKING:
-    from ConfigSpace import ConfigurationSpace
-    from carps.utils.trials import TrialInfo, TrialValue
-
-    from optbench.abstract_function import AbstractFunction
     from carps.loggers.abstract_logger import AbstractLogger
 
 
 
-class OptBenchProblem(Problem):
+class OptBenchObjectiveFunction(ObjectiveFunction):
     def __init__(self, function: AbstractFunction, loggers: list[AbstractLogger] | None = None) -> None:
         super().__init__(loggers=loggers)
 
