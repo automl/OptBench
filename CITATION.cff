@@ -6,7 +6,7 @@ message: "This is the message displayed when viewing the citation on github"
 title: "OptBench"
 date-released: "<<date>>"
 
-url: "https://automl.github.io/OptBench/main/"
+url: tba
 
 # Replace automl here with your own github name if you need
 repository-code: "https://github.com/automl/OptBench"
@@ -22,5 +22,5 @@ keywords:
 authors:
   - family-names: ""
     given-names: ""
-    affiliation: "Leibniz University Hannover, Germany"
+    affiliation: "tba"
 ...
