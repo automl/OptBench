@@ -3,7 +3,7 @@
 
 ## Development Lead
 
-Carolin Benjamins <c.benjamins@ai.uni-hannover.de>
+tba
 
 ## Contributors
 
