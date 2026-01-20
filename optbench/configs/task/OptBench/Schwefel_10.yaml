@@ -17,70 +17,70 @@ task:
       d:
         name: null
         hyperparameters:
-        - type: uniform_int
+        - type: uniform_float
           name: x_0
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_1
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_2
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_3
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_4
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_5
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_6
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_7
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_8
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_9
           lower: -500
           upper: 500

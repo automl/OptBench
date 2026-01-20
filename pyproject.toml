@@ -65,12 +65,12 @@ exclude_lines = [
   "if TYPE_CHECKING",
 ]
 
-[tool.commitizen]
-name = "cz_conventional_commits"
-version = "1.2.0"
-update_changelog_on_bump = true
-version_files = ["pyproject.toml:version"]
-changelog_start_rev = "1.0.0"
+# [tool.commitizen]
+# name = "cz_conventional_commits"
+# version = "1.2.0"
+# update_changelog_on_bump = true
+# version_files = ["pyproject.toml:version"]
+# changelog_start_rev = "1.0.0"
 
 # https://github.com/charliermarsh/ruff
 [tool.ruff]

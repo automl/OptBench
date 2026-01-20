@@ -17,14 +17,14 @@ task:
       d:
         name: null
         hyperparameters:
-        - type: uniform_int
+        - type: uniform_float
           name: x_0
           lower: -500
           upper: 500
           default_value: 0
           log: false
           meta: null
-        - type: uniform_int
+        - type: uniform_float
           name: x_1
           lower: -500
           upper: 500
