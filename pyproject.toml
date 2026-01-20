@@ -50,40 +50,18 @@ xfail_strict = true
 addopts = "--durations=10 -vv"
 markers = ["example: An example"]
 
-
-[tool.coverage.run]
-branch = true
-include = ["optbench"]
-
-[tool.coverage.report]
-show_missing = true
-skip_covered = true
-exclude_lines = [
-  "pragma: no cover",
-  '\.\.\.',
-  "raise NotImplementedError",
-  "if TYPE_CHECKING",
-]
-
-# [tool.commitizen]
-# name = "cz_conventional_commits"
-# version = "1.2.0"
-# update_changelog_on_bump = true
-# version_files = ["pyproject.toml:version"]
-# changelog_start_rev = "1.0.0"
-
 # https://github.com/charliermarsh/ruff
 [tool.ruff]
-target-version = "py311"
-line-length = 88
-show-source = true
-src = ["src", "tests", "examples", "notebooks", "optbench"]
-extend-safe-fixes = ["ALL"]
+target-version = "py312"
+line-length = 120
+output-format = "full"
+src = ["dacboenv", "tests", "examples", "notebooks"]
+lint.extend-safe-fixes = ["ALL"]
 
 # Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+lint.dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-select = [
+lint.select = [
   "A",
   # "ANN", # Handled by mypy
   "ARG",
@@ -132,7 +110,7 @@ select = [
   "YTT",
 ]
 
-ignore = [
+lint.ignore = [
   "D104",    # Missing docstring in public package
   "D105",    # Missing docstring in magic mthod
   "D203",    # 1 blank line required before class docstring
@@ -144,15 +122,16 @@ ignore = [
   "S101",    # Use of assert detected.
   "W292",    # No newline at end of file
   "PLC1901", # "" can be simplified to be falsey
-  "TCH003",  # Move stdlib import into TYPE_CHECKING
+  "TC003",  # Move stdlib import into TYPE_CHECKING
   "B010",    # Do not use `setattr`
   "COM812",
   # These tend to be lighweight and confuse pyright
   "PTH123",
   "PTH109",
   "T201",
-  "ERA001"
+  "ERA001",
 ]
+extend-include = ["*.ipynb"]
 
 exclude = [
   ".bzr",
@@ -176,11 +155,11 @@ exclude = [
   "venv",
   "docs",
   "*plotting*",
-  "*hydra_utils*"
+  "*hydra_utils*",
 ]
 
 # Exclude a variety of commonly ignored directories.
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "tests/*.py" = [
   "S101",
   "D103",
@@ -191,15 +170,26 @@ exclude = [
   "PLR2004",
   "PD901",   #  X is a bad variable name. (pandas)
   "TCH",
-  "N803"
+  "N803",
 ]
 
 "__init__.py" = ["I002"]
-"examples/*" = ["INP001", "I002", "E741", "D101", "D103", "T20", "D415", "ERA001", "E402", "E501"]
+"examples/*" = [
+  "INP001",
+  "I002",
+  "E741",
+  "D101",
+  "D103",
+  "T20",
+  "D415",
+  "ERA001",
+  "E402",
+  "E501",
+]
 "docs/*" = ["INP001"]
 
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["amltk"]
 known-third-party = ["sklearn"]
 no-lines-before = ["future"]
@@ -208,16 +198,16 @@ combine-as-imports = true
 extra-standard-library = ["typing_extensions"]
 force-wrap-aliases = true
 
-[tool.ruff.pydocstyle]
-convention = "google"
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
 
-[tool.ruff.pylint]
+[tool.ruff.lint.pylint]
 max-args = 10 # Changed from default of 5
 
 [tool.mypy]
-python_version = "3.10"
-packages = ["optbench", "tests"]
-exclude = ["optbench/plotting.py"]
+python_version = "3.12"
+packages = ["tests"]
+exclude = []
 show_error_codes = true
 
 warn_unused_configs = true # warn about unused [tool.mypy] lines
@@ -237,9 +227,9 @@ warn_return_any = true
 
 [[tool.mypy.overrides]]
 module = ["tests.*"]
-disallow_untyped_defs = false       # Sometimes we just want to ignore verbose types
-disallow_untyped_decorators = false # Test decorators are not properly typed
-disallow_incomplete_defs = false    # Sometimes we just want to ignore verbose types
+disallow_untyped_defs = false          # Sometimes we just want to ignore verbose types
+disallow_untyped_decorators = false    # Test decorators are not properly typed
+disallow_incomplete_defs = false       # Sometimes we just want to ignore verbose types
 disable_error_code = ["var-annotated"]
 
 [[tool.mypy.overrides]]
