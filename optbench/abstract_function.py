@@ -24,9 +24,12 @@ class AbstractFunction(ObjectiveFunction):
         self.upper_bounds = upper_bounds
 
         # Uniform Float Hyperparameters
-        space = {f"x_{i}": (self.lower_bounds[i], self.upper_bounds[i]) for i in range(dim)}
+        hps = [
+            Float(name=f"x_{i}", bounds=(self.lower_bounds[i], self.upper_bounds[i]))
+            for i in range(dim)
+        ]
         self._configspace = ConfigurationSpace(
-            space=space,
+            space=hps,
             seed=seed
         )
 
