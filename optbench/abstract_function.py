@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 class AbstractFunction(ObjectiveFunction):
     def __init__(self, dim: int, lower_bounds: list[float], upper_bounds: list[float], seed: int | None = None, loggers: list[AbstractLogger] | None = None) -> None:
-        super().__init__()
+        super().__init__(loggers=loggers)
 
         self.dim = dim
         self.lower_bounds = lower_bounds
