@@ -8,8 +8,7 @@ date-released: "<<date>>"
 
 url: tba
 
-# Replace automl here with your own github name if you need
-repository-code: "https://github.com/automl/OptBench"
+repository-code: "https://github.com/XXXXX/OptBench"
 
 version: "0.1.0"
 
