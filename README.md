@@ -3,7 +3,7 @@
 Optimization tasks:
 Synthetic functions: Ackley, Levy, Schwefel
 
-Compatible with [carps](https://github.com/automl/CARP-S)
+Compatible with [carps](https://github.com/XXXXX/CARP-S)
 
 ## Installation
 ```bash
@@ -13,8 +13,8 @@ conda create -n optbench python=3.12 -c conda-forge
 # Activate env
 conda activate optbench
 
-# Clone repo
-git clone git@github.com:automl/OptBench.git
+# Clone this repo
+git clone git@github.com:XXXXX/OptBench.git
 cd OptBench
 
 # Install 
@@ -28,7 +28,7 @@ python -m carps.run 'hydra.searchpath=[pkg://optbench/configs]' +optimizer/rando
 ```
 The breakdown of the command:
 - `'hydra.searchpath=[pkg://optbench/configs]'`: Let hydra know where to find the configs of the OptBench package. For this, `optbench` needs to be installed. It is in general: pkg://PACKAGE_NAME/PATH_INSIDE_PACKAGE_TO_CONFIGS_FOLDER .
-- `+optimizer/randomsearch=config`: select an optimizer from `carps`. Follows the config folder structure in `carps`. Beware, for other optimizers you need to install dependencies (check the [repo](https://github.com/automl/CARP-S)).
+- `+optimizer/randomsearch=config`: select an optimizer from `carps`. Follows the config folder structure in `carps`. Beware, for other optimizers you need to install dependencies (check the [repo](https://github.com/XXXXX/CARP-S)).
 - `+task/OptBench=Ackley_2`: Select a problem. Follows the configs folder structure in this package, starting from `optbench/configs`.
 - `seed=1`: Set the seed to 1. 🙂
 
