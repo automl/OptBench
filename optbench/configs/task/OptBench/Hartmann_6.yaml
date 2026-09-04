@@ -3,10 +3,10 @@ benchmark_id: OptBench
 task_id: ${task.name}
 task:
   _target_: carps.utils.task.Task
-  name: Hartmann4
+  name: Hartmann6
   seed: ${seed}
   objective_function:
-    _target_: optbench.functions.Hartmann4
+    _target_: optbench.functions.Hartmann6
     seed: ${seed}
   input_space:
     _target_: carps.utils.task.InputSpace
